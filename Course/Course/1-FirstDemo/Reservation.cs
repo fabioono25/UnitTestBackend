@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-/// <summary>
+﻿/// <summary>
 /// The objective of this class is describe the first scenarios that we can map inside a method
+/// 1 - we'll create our first test, following the basic conventions
+/// 2 - after this, we'll define the other scenarios (how many paths?)
+/// 3 - let's refactor our code and take a look at the tests
 /// </summary>
 namespace Course._1_FirstDemo
 {
-    class Reservation
+    public class Reservation
     {
         public User MadeBy { get; set; }
 
@@ -23,8 +22,8 @@ namespace Course._1_FirstDemo
         }
     }
 
-    class User
+    public class User
     {
-        public bool IsAdmin { get; internal set; }
+        public bool IsAdmin { get; set; }
     }
 }
