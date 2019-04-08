@@ -24,8 +24,10 @@ namespace Course._3_Mocking
         {
             var str = _fileReader.Read(file);
             var video = JsonConvert.DeserializeObject<Video>(str);
+
             if (video == null)
                 return "Error parsing the video.";
+
             return video.Title;
         }
 

@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Course._3_Mocking
 {
+    /// <summary>
+    /// 1 - Implement the unit tests
+    /// </summary>
     public class OrderService
     {
         private readonly IStorage _storage;
