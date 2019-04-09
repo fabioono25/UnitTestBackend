@@ -5,3 +5,4 @@
 3 - If divisible by 5, replace with "Buzz"
 4 - If divisible by 3 and 5, replace with "FizzBuzz"
 
+5 - I just added the FizzBuzzer class, so you can start from this to the TDD aproach ;-)

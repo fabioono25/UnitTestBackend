@@ -7,6 +7,7 @@ namespace Course._2_Fundamentals
     /// Challenge!
     /// Here we're working with generic classes (https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/generic-classes)
     /// 1 - Create the UnitTests for the methods of this class
+    /// 2 - Go to VideoService_BeforeRefactoring class
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Stack<T>

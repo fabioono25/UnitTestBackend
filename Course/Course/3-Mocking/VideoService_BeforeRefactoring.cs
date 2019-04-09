@@ -6,6 +6,11 @@ using Newtonsoft.Json;
 
 namespace Course._3_Mocking
 {
+    /// <summary>
+    /// 1 - Take a look about this class VideoService. The method ReadVideoTitle is tightly coupled to this class.
+    /// We need to ensure the loosely-coupling, so we can develop the tests
+    /// 2 - Go to VideoService class
+    /// </summary>
     class VideoService_BeforeRefactoring
     {
         //video.txt

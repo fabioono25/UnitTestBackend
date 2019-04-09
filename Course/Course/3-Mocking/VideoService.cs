@@ -6,7 +6,7 @@ using System.Linq;
 namespace Course._3_Mocking
 {
     /// <summary>
-    /// 1 - Understand how this class has been refactored
+    /// 1 - Understand how this class had been refactored
     /// 2 - Implement the unit tests for ReadVideoTitle
     /// 3 - Implement the unit tests for GetUnprocessedVideosAsCsv
     /// 4 - Go to InstallerHelper class
