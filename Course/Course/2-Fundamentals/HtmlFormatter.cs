@@ -6,7 +6,7 @@
     /// 1 - Use the EqualTo
     /// 2 - Use the Contais, StartWith, EndWith
     /// 3 - Use the IgnoreCase in the assertions created
-    /// 4 - Go to Math
+    /// 4 - Return to Math class
     /// </summary>
 
     public class HtmlFormatter
