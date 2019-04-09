@@ -11,7 +11,16 @@ namespace Course._1_FirstDemo
     {
         public User MadeBy { get; set; }
 
-        public bool CanBeCancelledBy(User user) => (user.IsAdmin || MadeBy == user);
+        public bool CanBeCancelledBy(User user)
+        {
+            if (user.IsAdmin)
+                return true;
+
+            if (MadeBy == user)
+                return true;
+
+            return false;
+        }
     }
 
     public class User
