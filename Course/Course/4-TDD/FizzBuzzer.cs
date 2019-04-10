@@ -4,20 +4,12 @@ namespace Course._4_TDD
 {
     public class FizzBuzzer
     {
-        public string GetValue(int value)
+        public string GetValue(int input)
         {
-            var result = "";
+            if (input % 3 == 0)
+                return "Fizz";
 
-            if (value % 3 == 0)
-                result += "Fizz";
-
-            if (value % 5 == 0)
-                result += "Buzz";
-
-            if (!string.IsNullOrEmpty(result))
-                return result;
-
-            return value.ToString();
+            return input.ToString();
         }
     }
 }
