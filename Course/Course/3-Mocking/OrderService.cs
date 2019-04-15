@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Course._3_Mocking
+﻿namespace Course._3_Mocking
 {
     /// <summary>
     /// 1 - Implement the unit tests

@@ -1,26 +1,58 @@
 ﻿using Course._3_Mocking;
 using Moq;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Course.UnitTests._3_Mocking
 {
     [TestFixture]
     class VideoServiceTests
     {
-        [Test]
-        public void ReadVideoTitle_VideoIsNull_ReturnErrorMesssage()
+        private VideoService _videoService;
+        private Mock<IFileReader> _fileReader;
+        private Mock<IVideoRepository> _repository;
+
+        [SetUp]
+        public void SetUp()
         {
-            //arrange
-            var mockFileReader = new Mock<IFileReader>();
-            mockFileReader.Setup(m => m.Read("video.txt")).Returns("");
+            _fileReader = new Mock<IFileReader>();
+            _repository = new Mock<IVideoRepository>();
+            _videoService = new VideoService(_fileReader.Object, _repository.Object);
+        }
 
-            var videoService = new VideoService(mockFileReader.Object);
+        [Test]
+        public void ReadVideoTitle_EmptyFile_ReturnError()
+        {
+            _fileReader.Setup(fr => fr.Read(It.IsAny<string>())).Returns("");
 
-            //act
-            var result = videoService.ReadVideoTitle("video.txt");
+            var result = _videoService.ReadVideoTitle(It.IsAny<string>());
 
-            //assert
             Assert.That(result, Does.Contain("error").IgnoreCase);
+        }
+
+        [Test]
+        public void GetUnprocessedVideosAsCsv_AllVideosAreProcessed_ReturnAnEmptyString()
+        {
+            _repository.Setup(r => r.GetUnprocessedVideos()).Returns(new List<Video>());
+
+            var result = _videoService.GetUnprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo(""));
+        }
+
+        [Test]
+        public void GetUnprocessedVideosAsCsv_AFewUnprocessedVideos_ReturnAStringWithIdOfUnprocessedVideos()
+        {
+            _repository.Setup(r => r.GetUnprocessedVideos()).Returns(new List<Video>
+            {
+                new Video { Id = 1 },
+                new Video { Id = 2 },
+                new Video { Id = 3 },
+            });
+
+            var result = _videoService.GetUnprocessedVideosAsCsv();
+
+            Assert.That(result, Is.EqualTo("1,2,3"));
         }
     }
 }

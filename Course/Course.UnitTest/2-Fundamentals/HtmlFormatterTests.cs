@@ -1,8 +1,5 @@
 ﻿using Course._2_Fundamentals;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Course.UnitTests._2_Fundamentals
 {
